@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Domains", "1 - Domains", "{C87574FD-9282-44C1-A678-5A47B086CD74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infra", "2 - Infra", "{C4780DD6-92E9-4479-809A-F38C81C8BC38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Business", "3 - Business", "{A9F2E7E9-5734-4D5C-9FDA-DA82ED17377D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - API", "4 - API", "{C7A77FB2-888D-4394-A5F7-FD1A607D490C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Views", "5 - Views", "{CED4FE15-FD59-41EB-A953-6E09D6243F9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Tests", "6 - Tests", "{42F1DE4F-ED3F-4432-8024-B8C2799DC9D0}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A776486-EC4A-4D3F-9101-5D29AE7C3782}
+	EndGlobalSection
+EndGlobal
