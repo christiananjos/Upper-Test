@@ -22,7 +22,7 @@ namespace Data.Seeds
 
 
 
-
+        //https://medium.com/@sacchitiellogiovanni/ef-core-e-ddd-mapeando-e-criando-seeds-com-objetos-de-valor-f26fc5d73a94
 
             modelBuilder.Entity<Arvore>().HasData(
                 arvore1,
