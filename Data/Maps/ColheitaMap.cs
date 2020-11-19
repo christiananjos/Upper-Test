@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Data.Maps
 {
@@ -15,13 +12,16 @@ namespace Data.Maps
             builder.Property(x => x.IdColheita).ValueGeneratedOnAdd();
 
             builder.Property(x => x.Informações)
-                    .HasColumnType("Varchar(100)");
+                    .HasColumnType("Varchar(100)")
+                     .IsRequired();
 
             builder.Property(x => x.DataColheita)
-                   .HasColumnType("Date");
+                   .HasColumnType("Date")
+                   .IsRequired();
 
             builder.Property(x => x.PesoBruto)
-                  .HasColumnType("Money");
+                  .HasColumnType("Money")
+                  .IsRequired();
 
 
         }
