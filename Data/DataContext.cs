@@ -1,9 +1,7 @@
 ﻿using Data.Maps;
+using Data.Seeds;
 using Microsoft.EntityFrameworkCore;
 using Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Data
 {
@@ -26,6 +24,8 @@ namespace Data
             modelBuilder.ApplyConfiguration(new ColheitaMap());
             modelBuilder.ApplyConfiguration(new EspecieMap());
             modelBuilder.ApplyConfiguration(new GrupoArvoresMap());
+
+            //modelBuilder.Seed();
 
         }
     }

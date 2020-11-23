@@ -9,14 +9,14 @@ namespace Data.Maps
         public void Configure(EntityTypeBuilder<GrupoArvores> builder)
         {
             builder.HasKey(x => x.IdGrupoArvores);
-            builder.Property(x => x.IdGrupoArvores).ValueGeneratedOnAdd();
+            //builder.Property(x => x.IdGrupoArvores).ValueGeneratedOnAdd();
 
             builder.Property(x => x.Nome)
                     .HasColumnType("Varchar(100)")
                     .IsRequired();
 
             builder.Property(x => x.Descricao)
-                   .HasColumnType("Date")
+                   .HasColumnType("Varchar(100)")
                    .IsRequired();
 
 

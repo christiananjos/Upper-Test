@@ -9,6 +9,8 @@ namespace Models
         public int IdArvore { get; set; }
         public string Descricao { get; set; }
         public int Idade { get; set; }
+        
+        public int EspecieId { get; set; }
         public Especie Especie { get; set; }
 
         public Arvore(string descricao, int idade, Especie especie)
