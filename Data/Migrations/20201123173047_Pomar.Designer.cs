@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201123172802_Pomar")]
+    [Migration("20201123173047_Pomar")]
     partial class Pomar
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,9 @@ namespace Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("GrupoArvoresIdGrupoArvores")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GrupoId")
                         .HasColumnType("int");
 
                     b.Property<int>("Idade")

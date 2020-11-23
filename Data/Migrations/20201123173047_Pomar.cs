@@ -58,6 +58,7 @@ namespace Data.Migrations
                     Descricao = table.Column<string>(type: "Varchar(100)", nullable: false),
                     Idade = table.Column<int>(type: "Int", nullable: false),
                     EspecieId = table.Column<int>(type: "int", nullable: false),
+                    GrupoId = table.Column<int>(type: "int", nullable: false),
                     GrupoArvoresIdGrupoArvores = table.Column<int>(type: "int", nullable: true),
                     ColheitaIdColheita = table.Column<int>(type: "int", nullable: true)
                 },

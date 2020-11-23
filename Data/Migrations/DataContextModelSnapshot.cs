@@ -39,6 +39,9 @@ namespace Data.Migrations
                     b.Property<int?>("GrupoArvoresIdGrupoArvores")
                         .HasColumnType("int");
 
+                    b.Property<int>("GrupoId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Idade")
                         .HasColumnType("Int");
 
