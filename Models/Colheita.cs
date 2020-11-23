@@ -11,12 +11,12 @@ namespace Models
         public double PesoBruto { get; set; }
         public List<Arvore> Arvores { get; set; }
 
-        public Colheita(string informacoes, DateTime dataColheita, double pesoBruto, List<Arvore> arvores)
-        {
-            Informações = informacoes;
-            DataColheita = dataColheita;
-            PesoBruto = pesoBruto;
-            Arvores = arvores;
-        }
+        //public Colheita(string informacoes, DateTime dataColheita, double pesoBruto, List<Arvore> arvores)
+        //{
+        //    Informações = informacoes;
+        //    DataColheita = dataColheita;
+        //    PesoBruto = pesoBruto;
+        //    Arvores = arvores;
+        //}
     }
 }

@@ -9,9 +9,9 @@ namespace Models
 
         //public List<Arvore> Arvores { get; set; }
 
-        public Especie(string decricao)
-        {
-            Descricao = Descricao;
-        }
+        //public Especie(string decricao)
+        //{
+        //    Descricao = Descricao;
+        //}
     }
 }
