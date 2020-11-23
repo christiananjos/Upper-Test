@@ -11,7 +11,6 @@ namespace Business.Interfaces
         void Edit(T entity);
         T GetById(int id);
         IEnumerable<T> GetAll();
-        IEnumerable<T> Filter(Func<T, bool> predicate);
         void SaveChanges();
     }
 }

@@ -6,7 +6,10 @@
 
   <ItemGroup>
     <Folder Include="Business\" />
-    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 
 </Project>
