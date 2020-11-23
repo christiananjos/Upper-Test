@@ -13,12 +13,14 @@ namespace Models
         public int EspecieId { get; set; }
         public Especie Especie { get; set; }
 
-        public Arvore(string descricao, int idade, Especie especie)
-        {
-            Descricao = descricao;
-            Idade = idade;
-            Especie = especie;
+        public GrupoArvores GrupoArvores { get; set; }
 
-        }
+        //public Arvore(string descricao, int idade, Especie especie)
+        //{
+        //    Descricao = descricao;
+        //    Idade = idade;
+        //    Especie = especie;
+
+        //}
     }
 }

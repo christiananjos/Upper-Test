@@ -123,11 +123,13 @@ namespace Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Models.GrupoArvores", null)
+                    b.HasOne("Models.GrupoArvores", "GrupoArvores")
                         .WithMany("Arvores")
                         .HasForeignKey("GrupoArvoresIdGrupoArvores");
 
                     b.Navigation("Especie");
+
+                    b.Navigation("GrupoArvores");
                 });
 
             modelBuilder.Entity("Models.Colheita", b =>

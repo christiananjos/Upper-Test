@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201123171821_Pomar")]
+    [Migration("20201123172802_Pomar")]
     partial class Pomar
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -125,11 +125,13 @@ namespace Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Models.GrupoArvores", null)
+                    b.HasOne("Models.GrupoArvores", "GrupoArvores")
                         .WithMany("Arvores")
                         .HasForeignKey("GrupoArvoresIdGrupoArvores");
 
                     b.Navigation("Especie");
+
+                    b.Navigation("GrupoArvores");
                 });
 
             modelBuilder.Entity("Models.Colheita", b =>
