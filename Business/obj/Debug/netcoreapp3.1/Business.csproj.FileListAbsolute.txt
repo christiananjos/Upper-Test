@@ -10,3 +10,5 @@ C:\Users\chris\source\repos\christiananjos\Upper-Test\Business\obj\Debug\netcore
 C:\Users\chris\source\repos\christiananjos\Upper-Test\Business\bin\Debug\netcoreapp3.1\Models.dll
 C:\Users\chris\source\repos\christiananjos\Upper-Test\Business\bin\Debug\netcoreapp3.1\Models.pdb
 C:\Users\chris\source\repos\christiananjos\Upper-Test\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete
+C:\Users\chris\source\repos\christiananjos\Upper-Test\Business\bin\Debug\netcoreapp3.1\Data.dll
+C:\Users\chris\source\repos\christiananjos\Upper-Test\Business\bin\Debug\netcoreapp3.1\Data.pdb

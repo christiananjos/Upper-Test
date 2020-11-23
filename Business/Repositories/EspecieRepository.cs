@@ -1,40 +1,46 @@
 ﻿using Business.Interfaces;
+using Data;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Repositories
 {
     public class EspecieRepository<Especie> : IRepository<Especie> where Especie : class
     {
+        private readonly DataContext _context;
+
+        public EspecieRepository(DataContext context) => _context = context;
+
         public void Create(Especie entity)
         {
-            throw new NotImplementedException();
+            _context.Set<Especie>().Add(entity);
         }
 
         public void Delete(Especie entity)
         {
-            throw new NotImplementedException();
+            _context.Set<Especie>().Remove(entity);
         }
 
         public void Edit(Especie entity)
         {
-            throw new NotImplementedException();
+            _context.Set<Especie>().Update(entity);
         }
 
         public IEnumerable<Especie> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Set<Especie>();
         }
 
         public Especie GetById(int id)
         {
-            throw new NotImplementedException();
+            return (Especie)_context.Especies.Select(x => x.IdEspecie == id);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
     }
 }

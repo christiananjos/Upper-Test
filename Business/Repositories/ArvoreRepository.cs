@@ -1,40 +1,46 @@
 ﻿using Business.Interfaces;
+using Data;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Repositories
 {
     public class ArvoreRepository<Arvore> : IRepository<Arvore> where Arvore : class
     {
+        private readonly DataContext _context;
+
+        public ArvoreRepository(DataContext context) => _context = context;
+
         public void Create(Arvore entity)
         {
-            throw new NotImplementedException();
+            _context.Set<Arvore>().Add(entity);
         }
 
         public void Delete(Arvore entity)
         {
-            throw new NotImplementedException();
+            _context.Set<Arvore>().Remove(entity);
         }
 
         public void Edit(Arvore entity)
         {
-            throw new NotImplementedException();
+            _context.Set<Arvore>().Update(entity);
         }
 
         public IEnumerable<Arvore> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Set<Arvore>();
         }
 
         public Arvore GetById(int id)
         {
-            throw new NotImplementedException();
+            return (Arvore)_context.Arvores.Select(x => x.IdArvore == id);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
     }
 }
