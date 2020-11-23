@@ -26,9 +26,6 @@ namespace Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("ColheitaIdColheita")
-                        .HasColumnType("int");
-
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("Varchar(100)");
@@ -47,8 +44,6 @@ namespace Data.Migrations
 
                     b.HasKey("IdArvore");
 
-                    b.HasIndex("ColheitaIdColheita");
-
                     b.HasIndex("EspecieId");
 
                     b.HasIndex("GrupoArvoresIdGrupoArvores");
@@ -63,6 +58,9 @@ namespace Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("ArvoreId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DataColheita")
                         .HasColumnType("Date");
 
@@ -74,6 +72,8 @@ namespace Data.Migrations
                         .HasColumnType("Money");
 
                     b.HasKey("IdColheita");
+
+                    b.HasIndex("ArvoreId");
 
                     b.ToTable("Colheitas");
                 });
@@ -116,10 +116,6 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Models.Arvore", b =>
                 {
-                    b.HasOne("Models.Colheita", null)
-                        .WithMany("Arvores")
-                        .HasForeignKey("ColheitaIdColheita");
-
                     b.HasOne("Models.Especie", "Especie")
                         .WithMany()
                         .HasForeignKey("EspecieId")
@@ -137,6 +133,12 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Models.Colheita", b =>
                 {
+                    b.HasOne("Models.Arvore", "Arvores")
+                        .WithMany()
+                        .HasForeignKey("ArvoreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Arvores");
                 });
 

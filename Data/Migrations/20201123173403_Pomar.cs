@@ -8,21 +8,6 @@ namespace Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Colheitas",
-                columns: table => new
-                {
-                    IdColheita = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Informações = table.Column<string>(type: "Varchar(100)", nullable: false),
-                    DataColheita = table.Column<DateTime>(type: "Date", nullable: false),
-                    PesoBruto = table.Column<decimal>(type: "Money", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Colheitas", x => x.IdColheita);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Especies",
                 columns: table => new
                 {
@@ -59,18 +44,11 @@ namespace Data.Migrations
                     Idade = table.Column<int>(type: "Int", nullable: false),
                     EspecieId = table.Column<int>(type: "int", nullable: false),
                     GrupoId = table.Column<int>(type: "int", nullable: false),
-                    GrupoArvoresIdGrupoArvores = table.Column<int>(type: "int", nullable: true),
-                    ColheitaIdColheita = table.Column<int>(type: "int", nullable: true)
+                    GrupoArvoresIdGrupoArvores = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Arvores", x => x.IdArvore);
-                    table.ForeignKey(
-                        name: "FK_Arvores_Colheitas_ColheitaIdColheita",
-                        column: x => x.ColheitaIdColheita,
-                        principalTable: "Colheitas",
-                        principalColumn: "IdColheita",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Arvores_Especies_EspecieId",
                         column: x => x.EspecieId,
@@ -85,10 +63,27 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Arvores_ColheitaIdColheita",
-                table: "Arvores",
-                column: "ColheitaIdColheita");
+            migrationBuilder.CreateTable(
+                name: "Colheitas",
+                columns: table => new
+                {
+                    IdColheita = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Informações = table.Column<string>(type: "Varchar(100)", nullable: false),
+                    DataColheita = table.Column<DateTime>(type: "Date", nullable: false),
+                    PesoBruto = table.Column<decimal>(type: "Money", nullable: false),
+                    ArvoreId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Colheitas", x => x.IdColheita);
+                    table.ForeignKey(
+                        name: "FK_Colheitas_Arvores_ArvoreId",
+                        column: x => x.ArvoreId,
+                        principalTable: "Arvores",
+                        principalColumn: "IdArvore",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Arvores_EspecieId",
@@ -99,15 +94,20 @@ namespace Data.Migrations
                 name: "IX_Arvores_GrupoArvoresIdGrupoArvores",
                 table: "Arvores",
                 column: "GrupoArvoresIdGrupoArvores");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Colheitas_ArvoreId",
+                table: "Colheitas",
+                column: "ArvoreId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Arvores");
+                name: "Colheitas");
 
             migrationBuilder.DropTable(
-                name: "Colheitas");
+                name: "Arvores");
 
             migrationBuilder.DropTable(
                 name: "Especies");

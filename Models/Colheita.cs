@@ -9,7 +9,9 @@ namespace Models
         public string Informações { get; set; }
         public DateTime DataColheita { get; set; }
         public double PesoBruto { get; set; }
-        public List<Arvore> Arvores { get; set; }
+
+        public int ArvoreId { get; set; }
+        public Arvore Arvores { get; set; }
 
         //public Colheita(string informacoes, DateTime dataColheita, double pesoBruto, List<Arvore> arvores)
         //{
