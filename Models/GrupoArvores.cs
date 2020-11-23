@@ -15,7 +15,7 @@ namespace Models
         {
             IdGrupoArvores = idGrupo;
             Nome = nomeGrupo;
-            Descricao = descricaoGrupo
+            Descricao = descricaoGrupo;
         }
     }
 }
