@@ -7,11 +7,9 @@ namespace Models
         public int IdEspecie { get; set; }
         public string Descricao { get; set; }
 
-        //public List<Arvore> Arvores { get; set; }
-
-        //public Especie(string decricao)
-        //{
-        //    Descricao = Descricao;
-        //}
+        public Especie(string decricao)
+        {
+            Descricao = Descricao;
+        }
     }
 }
