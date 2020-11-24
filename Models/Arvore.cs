@@ -12,7 +12,8 @@ namespace Models
         
         public int EspecieId { get; set; }
         public Especie Especie { get; set; }
-        public int GrupoId { get; set; }
+
+        public int GrupoArvoresId { get; set; }
         public GrupoArvores GrupoArvores { get; set; }
 
         //public Arvore(string descricao, int idade, Especie especie)

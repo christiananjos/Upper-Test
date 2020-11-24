@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Models
 {
@@ -10,7 +8,7 @@ namespace Models
         public string Nome { get; set; }
         public string Descricao { get; set; }
 
-        public List<Arvore> Arvores { get; set; }
+        //public List<Arvore> Arvores { get; set; }
 
         //public GrupoArvores(int idGrupo, string nomeGrupo, string descricaoGrupo)
         //{

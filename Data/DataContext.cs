@@ -25,8 +25,6 @@ namespace Data
             modelBuilder.ApplyConfiguration(new EspecieMap());
             modelBuilder.ApplyConfiguration(new GrupoArvoresMap());
 
-            //modelBuilder.Seed();
-
         }
     }
 }

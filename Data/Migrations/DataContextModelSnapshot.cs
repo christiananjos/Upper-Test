@@ -33,10 +33,7 @@ namespace Data.Migrations
                     b.Property<int>("EspecieId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("GrupoArvoresIdGrupoArvores")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GrupoId")
+                    b.Property<int>("GrupoArvoresId")
                         .HasColumnType("int");
 
                     b.Property<int>("Idade")
@@ -46,7 +43,7 @@ namespace Data.Migrations
 
                     b.HasIndex("EspecieId");
 
-                    b.HasIndex("GrupoArvoresIdGrupoArvores");
+                    b.HasIndex("GrupoArvoresId");
 
                     b.ToTable("Arvores");
                 });
@@ -123,8 +120,10 @@ namespace Data.Migrations
                         .IsRequired();
 
                     b.HasOne("Models.GrupoArvores", "GrupoArvores")
-                        .WithMany("Arvores")
-                        .HasForeignKey("GrupoArvoresIdGrupoArvores");
+                        .WithMany()
+                        .HasForeignKey("GrupoArvoresId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Especie");
 
@@ -139,11 +138,6 @@ namespace Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Arvores");
-                });
-
-            modelBuilder.Entity("Models.GrupoArvores", b =>
-                {
                     b.Navigation("Arvores");
                 });
 #pragma warning restore 612, 618

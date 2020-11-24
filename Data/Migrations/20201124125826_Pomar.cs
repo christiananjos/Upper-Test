@@ -43,8 +43,7 @@ namespace Data.Migrations
                     Descricao = table.Column<string>(type: "Varchar(100)", nullable: false),
                     Idade = table.Column<int>(type: "Int", nullable: false),
                     EspecieId = table.Column<int>(type: "int", nullable: false),
-                    GrupoId = table.Column<int>(type: "int", nullable: false),
-                    GrupoArvoresIdGrupoArvores = table.Column<int>(type: "int", nullable: true)
+                    GrupoArvoresId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -56,11 +55,11 @@ namespace Data.Migrations
                         principalColumn: "IdEspecie",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Arvores_GrupoArvores_GrupoArvoresIdGrupoArvores",
-                        column: x => x.GrupoArvoresIdGrupoArvores,
+                        name: "FK_Arvores_GrupoArvores_GrupoArvoresId",
+                        column: x => x.GrupoArvoresId,
                         principalTable: "GrupoArvores",
                         principalColumn: "IdGrupoArvores",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -91,9 +90,9 @@ namespace Data.Migrations
                 column: "EspecieId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Arvores_GrupoArvoresIdGrupoArvores",
+                name: "IX_Arvores_GrupoArvoresId",
                 table: "Arvores",
-                column: "GrupoArvoresIdGrupoArvores");
+                column: "GrupoArvoresId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Colheitas_ArvoreId",
