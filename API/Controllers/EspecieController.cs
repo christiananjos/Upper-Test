@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,21 +12,25 @@ namespace API.Controllers
     {
         
         [HttpGet]
-        public IEnumerable<string> BuscarTodos()
+        public IEnumerable<Especie> BuscarTodos()
         {
-            return new string[] { "value1", "value2" };
+            var especies = new List<Especie>();
+
+            return especies;
         }
 
         
         [HttpGet("{id}")]
-        public string BuscaPorId(int id)
+        public Especie BuscaPorId(int id)
         {
-            return "value";
+            var especie = new Especie();
+
+            return especie;
         }
 
        
         [HttpPost]
-        public void Gravar([FromBody] string value)
+        public void Gravar([FromBody] Especie especie)
         {
             if (ModelState.IsValid)
             {
@@ -35,7 +40,7 @@ namespace API.Controllers
 
        
         [HttpPut("{id}")]
-        public void Atualizar(int id, [FromBody] string value)
+        public void Atualizar([FromBody] Especie especie)
         {
             if (ModelState.IsValid)
             {

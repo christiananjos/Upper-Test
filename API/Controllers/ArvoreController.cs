@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,21 +15,25 @@ namespace API.Controllers
     {
        
         [HttpGet]
-        public IEnumerable<string> BuscarTodos()
+        public IEnumerable<Arvore> BuscarTodos()
         {
-            return new string[] { "value1", "value2" };
+            var arvores = new List<Arvore>();
+
+            return arvores;
         }
 
         
         [HttpGet("{id}")]
-        public string BuscaPorId(int id)
+        public Arvore BuscaPorId(int id)
         {
-            return "value";
+            var arvore = new Arvore();
+
+            return arvore;
         }
 
         
         [HttpPost]
-        public void Gravar([FromBody] string value)
+        public void Gravar([FromBody] Arvore arvore)
         {
             if (ModelState.IsValid)
             {
@@ -38,7 +43,7 @@ namespace API.Controllers
 
         
         [HttpPut("{id}")]
-        public void Atualizar(int id, [FromBody] string value)
+        public void Atualizar([FromBody] Arvore arvore)
         {
             if (ModelState.IsValid)
             {

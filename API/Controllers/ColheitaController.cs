@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,21 +13,25 @@ namespace API.Controllers
         // GET: api/<ColheitaController>
         // GET: api/<ArvoreController>
         [HttpGet]
-        public IEnumerable<string> BuscarTodos()
+        public IEnumerable<Colheita> BuscarTodos()
         {
-            return new string[] { "value1", "value2" };
+            var colheitas = new List<Colheita>();
+
+            return colheitas;
         }
 
         // GET api/<ArvoreController>/5
         [HttpGet("{id}")]
-        public string BuscaPorId(int id)
+        public Colheita BuscaPorId(int id)
         {
-            return "value";
+            var colheita = new Colheita();
+
+            return colheita;
         }
 
         // POST api/<ArvoreController>
         [HttpPost]
-        public void Gravar([FromBody] string value)
+        public void Gravar([FromBody] Colheita colheita)
         {
             if (ModelState.IsValid)
             {
@@ -39,7 +41,7 @@ namespace API.Controllers
 
         // PUT api/<ArvoreController>/5
         [HttpPut("{id}")]
-        public void Atualizar(int id, [FromBody] string value)
+        public void Atualizar([FromBody] Colheita colheita)
         {
             if (ModelState.IsValid)
             {
