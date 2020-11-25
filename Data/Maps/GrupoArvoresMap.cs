@@ -18,8 +18,6 @@ namespace Data.Maps
             builder.Property(x => x.Descricao)
                    .HasColumnType("Varchar(100)")
                    .IsRequired();
-
-
         }
     }
 }

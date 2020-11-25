@@ -18,12 +18,6 @@ namespace Data.Maps
             builder.Property(x => x.Idade)
                    .HasColumnType("Int")
                    .IsRequired();
-
-
-           
-            //builder.HasOne(a => a.Especie).WithMany(e => e.Arvores);
-
-
         }
     }
 }

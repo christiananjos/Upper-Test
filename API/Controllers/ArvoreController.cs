@@ -12,35 +12,43 @@ namespace API.Controllers
     [ApiController]
     public class ArvoreController : ControllerBase
     {
-        // GET: api/<ArvoreController>
+       
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<string> BuscarTodos()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<ArvoreController>/5
+        
         [HttpGet("{id}")]
-        public string Get(int id)
+        public string BuscaPorId(int id)
         {
             return "value";
         }
 
-        // POST api/<ArvoreController>
+        
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Gravar([FromBody] string value)
         {
+            if (ModelState.IsValid)
+            {
+
+            }
         }
 
-        // PUT api/<ArvoreController>/5
+        
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Atualizar(int id, [FromBody] string value)
         {
+            if (ModelState.IsValid)
+            {
+
+            }
         }
 
-        // DELETE api/<ArvoreController>/5
+        
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Remover(int id)
         {
         }
     }

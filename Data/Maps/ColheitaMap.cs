@@ -22,8 +22,6 @@ namespace Data.Maps
             builder.Property(x => x.PesoBruto)
                   .HasColumnType("Money")
                   .IsRequired();
-
-
         }
     }
 }

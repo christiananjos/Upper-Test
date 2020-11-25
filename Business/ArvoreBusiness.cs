@@ -1,15 +1,15 @@
 ﻿using Business.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business
 {
     public class ArvoreBusiness<Arvore> : IBusiness<Arvore> where Arvore : class
     {
+
         public void Apaga(Arvore entity)
         {
-            throw new NotImplementedException();
+           
         }
 
         public IEnumerable<Arvore> BuscaTodos()

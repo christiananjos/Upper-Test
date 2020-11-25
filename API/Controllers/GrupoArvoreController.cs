@@ -12,35 +12,41 @@ namespace API.Controllers
     [ApiController]
     public class GrupoArvoreController : ControllerBase
     {
-        // GET: api/<GrupoArvoreController>
+        
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<string> BuscarTodosGrupos()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<GrupoArvoreController>/5
+        
         [HttpGet("{id}")]
-        public string Get(int id)
+        public string BuscaPorId(int id)
         {
             return "value";
         }
 
-        // POST api/<GrupoArvoreController>
+        
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void GravarGrupo([FromBody] string value)
         {
+            if (ModelState.IsValid)
+            {
+
+            }
         }
 
-        // PUT api/<GrupoArvoreController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Atualizar(int id, [FromBody] string value)
         {
+            if (ModelState.IsValid)
+            {
+
+            }
         }
 
-        // DELETE api/<GrupoArvoreController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Remover(int id)
         {
         }
     }
