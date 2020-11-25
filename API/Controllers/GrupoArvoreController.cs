@@ -14,7 +14,7 @@ namespace API.Controllers
     {
         
         [HttpGet]
-        public IEnumerable<string> BuscarTodosGrupos()
+        public IEnumerable<string> BuscarTodos()
         {
             return new string[] { "value1", "value2" };
         }
@@ -28,7 +28,7 @@ namespace API.Controllers
 
         
         [HttpPost]
-        public void GravarGrupo([FromBody] string value)
+        public void Gravar([FromBody] string value)
         {
             if (ModelState.IsValid)
             {
