@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Business;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 
@@ -13,7 +14,13 @@ namespace API.Controllers
     [ApiController]
     public class ArvoreController : ControllerBase
     {
-       
+        private readonly ArvoreBusiness<Arvore> _business;
+
+        public ArvoreController(ArvoreBusiness<Arvore> business)
+        {
+            _business = business;
+        }
+
         [HttpGet]
         public IEnumerable<Arvore> BuscarTodos()
         {
@@ -37,7 +44,7 @@ namespace API.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                _business.Cria(arvore);
             }
         }
 
